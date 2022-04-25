@@ -105,6 +105,7 @@ static void service_start_success(void)
 {
 	int rc;
 
+	M0_SET0(&sctx);
 	rc = cs_init(&sctx);
 	M0_ASSERT(rc == 0);
 	cs_fini(&sctx);
@@ -115,6 +116,7 @@ static void service_init_failure(void)
 	int rc;
 
 	m0_fi_enable_once("m0_cm_init", "init_failure");
+	M0_SET0(&sctx);
 	rc = cs_init(&sctx);
 	M0_ASSERT(rc != 0);
 }
@@ -124,6 +126,7 @@ static void service_start_failure(void)
 	int rc;
 
 	m0_fi_enable_once("m0_cm_setup", "setup_failure");
+	M0_SET0(&sctx);
 	rc = cs_init(&sctx);
 	M0_ASSERT(rc != 0);
 }
@@ -134,6 +137,7 @@ static void iter_setup(enum m0_cm_op op, uint64_t fd)
 	struct m0_pool_version *pver;
 	int                     rc;
 
+	M0_SET0(&sctx);
 	rc = cs_init(&sctx);
 	M0_ASSERT(rc == 0);
 

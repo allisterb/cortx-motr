@@ -550,6 +550,7 @@ static void receiver_init(void)
 
 	M0_SET0(&rag);
 	M0_SET0(&fctx);
+	M0_SET0(&sctx);
 
 	rc = m0_cm_type_register(&sender_cm_cmt);
 	M0_UT_ASSERT(rc == 0);

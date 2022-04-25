@@ -650,6 +650,7 @@ static int xform_init(void)
 
 	M0_SET0(&gob_fid);
 	M0_SET0(&cob_fid);
+	M0_SET0(&sctx);
 
 	reqh = NULL;
 	pdlay = NULL;
