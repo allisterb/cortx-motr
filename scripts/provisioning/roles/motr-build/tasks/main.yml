@@ -245,15 +245,15 @@
         regexp: '^Release: 1'
         line: 'Release: 99%{?dist}'
 
-    - name: install Lustre rpm build dependencies
-      command: yum-builddep -y ~/rpmbuild/SPECS/lustre.spec
-      register: builddep_result
-      changed_when: '"No uninstalled build requires" not in builddep_result.stdout'
+    # - name: install Lustre rpm build dependencies
+    #  command: yum-builddep -y ~/rpmbuild/SPECS/lustre.spec
+    #  register: builddep_result
+    #  changed_when: '"No uninstalled build requires" not in builddep_result.stdout'
 
-    - name: install Lustre rpm build dependencies again just in case
-      command: yum-builddep -y ~/rpmbuild/SPECS/lustre.spec
-      register: builddep_result
-      changed_when: '"No uninstalled build requires" not in builddep_result.stdout'
+    # - name: install Lustre rpm build dependencies again just in case
+    #  command: yum-builddep -y ~/rpmbuild/SPECS/lustre.spec
+    #  register: builddep_result
+    #  changed_when: '"No uninstalled build requires" not in builddep_result.stdout'
 
     - name: build Lustre rpms
       command: |

@@ -110,12 +110,12 @@
     - never
     - zfs
 
-- name: disable SELinux
-  selinux:
-    state: disabled
-  when: ansible_os_family == 'RedHat'
-  tags:
-    - no-selinux
+# - name: disable SELinux
+#  selinux:
+#    state: disabled
+#  when: ansible_os_family == 'RedHat'
+#  tags:
+#    - no-selinux
 
 # in situations when we aren't allowed to reboot target node to ensure that
 # running kernel is the latest one, we need to request kernel-devel-`uname -r`
